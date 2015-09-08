@@ -54,8 +54,12 @@
             <li><%= link_to "/path3" do %>
               <i class="fa fa-cog"></i>
             <%end%></li>
-            <li><%= link_to "Sign in", "/path1"  %></li>
-            <li><%= link_to "Log in", "/path2"  %></li>
+            <li><%= link_to "/path3" do %>
+              <i class="fa fa-pencil-square-o green"></i> Sign Up
+            <%end%></li>
+            <li><%= link_to "/path1" do %>
+              <i class="fa fa-sign-in blue"></i> Sign In
+            <%end%></li>
           </ul>
         </div>
       </div>
