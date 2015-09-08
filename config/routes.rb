@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
-  root 'static#index'
+  root 'contents#index'
+
+  get 'contents/index'
+
+  get 'contents/create'
+
+  get 'contents/new'
+
+  get 'contents/edit'
+
+  get 'contents/show'
+
+  get 'contents/update'
+
+  get 'contents/destroy'
+
+  get 'members/index'
+
+  get 'members/create'
+
+  get 'members/new'
+
+  get 'members/edit'
+
+  get 'members/show'
+
+  get 'members/update'
+
+  get 'members/destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
