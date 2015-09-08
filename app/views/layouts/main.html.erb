@@ -47,16 +47,15 @@
         </button>
         <a class="navbar-brand" href="#">Moonjoke</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Sign in", "/path1"  %></li>
-                 
-            <li><%= link_to "Log in", "/path2"  %></li>
-            <li><%= link_to "/path3" do %>
-              <i class="fa fa-cog"></i>
-            <%end%>
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "/path4" do %>
               <i class="fa fa-upload"></i>
-            <%end%>
+            <%end%></li>
+            <li><%= link_to "/path3" do %>
+              <i class="fa fa-cog"></i>
+            <%end%></li>
+            <li><%= link_to "Sign in", "/path1"  %></li>
+            <li><%= link_to "Log in", "/path2"  %></li>
           </ul>
         </div>
       </div>
