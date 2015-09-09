@@ -63,24 +63,25 @@
 
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <span id="logo">
-            <%= link_to "/" do %>
+            <%= link_to root_path do %>
             <%= image_tag('logo.png', :class => "img-responsive") %>
             <%end%>
           </span>
           <ul id="nav" class="nav navbar-nav navbar-right">
-              <li><%= link_to upload_path do %>
+            <li>
+              <%= link_to upload_path do %>
               <i class="fa fa-upload fa-lg"></i>
-            <%end%></li>
+              <%end%>
+            </li>
             <li type="button" data-toggle="modal" data-target="#myModal">
               <%= link_to "#" do %>
               <i class="fa fa-cog fa-lg"></i>
               <%end%>
             </li>
             <li id="signup">
-                <%= link_to register_path do %>
+              <%= link_to register_path do %>
               <span class="btn navbar-btn btn-success">
-                <i class="fa fa-pencil-square-o">
-                </i> Sign up
+                <i class="fa fa-pencil-square-o"></i> Sign up
               </span>
               <%end%>
             </li>
