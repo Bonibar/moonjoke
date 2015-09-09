@@ -1,19 +1,37 @@
-<div class="brn-group" role="group" aria-label="...">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">-15  <i class="fa fa-sort-desc"></i></button
-	</button>
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">15-20  <i class="fa fa-sort-desc"></i></button
-	</button>
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">20-30  <i class="fa fa-sort-desc"></i></button
-	</button>
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">30-40  <i class="fa fa-sort-desc"></i></button
-	</button>
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">40-45 <i class="fa fa-sort-desc"></i></button
-	</button>
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria haspopup="true" aria-expanded="false">Vote  <i class="fa fa-sort-desc"></i></button
-	</button>
-</div>
 
 <div class="container">
+  	<div class="btn-group" data-toggle="buttons">
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option1"> -15
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option2"> 15-20
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option3"> 20-30
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option3"> 30-40
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option3"> +40
+  		</label>
+	</div>
+ 	<div class="btn-group pull-right" data-toggle="buttons">
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option1"> Popular
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option2"> Recent
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option3"> Top Week
+  		</label>
+  		<label class="btn btn-primary">
+    		<input type="radio" name="options" id="option3"> Top Month
+  		</label>
+	</div>
+	
 	<div class="row jumbotron">
 		<div class="col-sm-2"><%= image_tag("pictureListContents.png", :alt =>"ictureofContents", :width=>125, :height=>125) %></div>
 		<div class="col-sm-offset-1 col-xs-3">
@@ -67,7 +85,7 @@
 		<div class="col-sm-offset-0 col-sm-6">
 			<div class="resume">
         	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis, odio eu consequat volutpat, orci lorem blandit urna, vel fringilla ipsum risus quis ex. In.</p>
-        </div>
-    </div>
+        	</div>
+    	</div>
 	</div>
 </div>
