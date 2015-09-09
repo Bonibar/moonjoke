@@ -23,15 +23,15 @@
 .blue { color: #01B0F0; }
 .red { color: #F7230C; }
 
-<<<<<<< Updated upstream
 .title { font-size: 25px;}
 
 .resume p { font-size: 15px;}
-=======
+
 #logo
 {
     display: inline-block;
-    height: auto;
+    min-width: 20%;
     max-width: 20%;
+    min-height: 20%;
+    max-height: 20%;
 }
->>>>>>> Stashed changes
