@@ -27,6 +27,9 @@
 
 .resume p { font-size: 15px;}
 
+.navbar .navbar-nav { display: inline-block; vertical-align: center; float: none}
+
+
 #logo
 {
     display: inline-block;
@@ -34,4 +37,6 @@
     max-width: 20%;
     min-height: 20%;
     max-height: 20%;
+    margin-right: 35%;
+    margin-left: 10%;
 }
