@@ -1,2 +1,31 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="panel panel-primary">
+  <div id="sign" class="panel-heading">LOG IN</div>
+
+  <a class="pull-center" id="google"> <%= image_tag('google.png', :class => "img-responsive center-block", :style => "max-width:250px") %> </a>
+
+  <div id="or">
+    or
+  </div>
+
+<div class="panel-body">
+  <form class="panel-body">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <a>
+      forgotten password?
+    </a>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
+</div>
