@@ -39,22 +39,14 @@
     max-height: 10%;
 }
 
-#nav
-{
-  display: inline-block;
-  float: right;
-}
-
 .navbar-nav li a
 {
 	margin-top: 20px;
-	margin-bottom: 15px;
 }
 
 .navbar-btn
 {
-	margin-top: 26px;
-	margin-bottom: 15px;
+	margin-top: -8px;
 }
 
 #signin a

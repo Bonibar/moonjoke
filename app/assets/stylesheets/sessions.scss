@@ -1,3 +1,36 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+    font-family: 'Comfortaa-Regular';
+    src: url('Comfortaa-Regular.eot');
+    src: url('Comfortaa-Regular.eot?#iefix') format('embedded-opentype'),
+         url('Comfortaa-Regular.woff') format('woff'),
+         url('app/assets/fonts/Comfortaa-Regular.ttf') format('truetype'),
+         url('Comfortaa-Regular.svg#Comfortaa-Regular') format('svg');
+}
+
+#or
+{
+  margin-top: 2%;
+  font-size: 200%;
+  text-align: center;
+}
+
+#sign {
+  color: #FFFFFF;
+//  font-family: Comfortaa-Regular;
+  text-align: center;
+  //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 42px;
+  margin-bottom: 5%;
+}
+
+#log {
+  color: #FFFFFF;
+//  font-family: Comfortaa-Regular;
+  text-align: center;
+  //text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 42px;
+}

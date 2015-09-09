@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  accepted: false
+  upload_date: 2015-09-09
+  category: 1
+  member_id: 
+
+two:
+  url: MyString
+  accepted: false
+  upload_date: 2015-09-09
+  category: 1
+  member_id: 
