@@ -19,4 +19,16 @@ class ContentsController < ApplicationController
 
   def destroy
   end
+
+  def moderate
+  end
+
+  def accept
+  end
+
+  def deny
+  end
+
+  def vote
+  end
 end
