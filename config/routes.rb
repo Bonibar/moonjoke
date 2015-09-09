@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'contents#index'
 
+  get     'register' => 'members#new'
+  get     'login'    => 'sessions#new'
+  post    'login'    => 'sessions#create'
+  delete  'logout'   => 'sessions#destroy'
+
   resources :contents
   resources :members
 
