@@ -118,9 +118,9 @@
                   <div class="modal-body" style="text-align: center;">
                       <div class="row">
                           <h2>Filter</h2>
-                          <button class="btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
                       </div>
                       <div class="row">
                           <h2>Display</h2>
@@ -163,5 +163,14 @@
 
     </div> <!-- /container -->
 
+      <script>
+        $(document).load(new function() {
+            $(".btn-settings").click(function() {
+                $(this).toggleClass("btn-danger");
+                $(this).toggleClass("btn-success");
+            });
+        });
+      </script>
+      
   </body>
 </html>
