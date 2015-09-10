@@ -106,7 +106,7 @@
 
             <% if is_logged? %>
             <li id="profile">
-              <%= link_to members_path do %>
+              <%= link_to member_path(current_member) do %>
               <span class="btn navbar-btn btn-info" >
                 <i class="fa fa-info"></i> Profile
               </span>
