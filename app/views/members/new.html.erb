@@ -8,9 +8,19 @@
 
       <!--<a href="#" class="btn azm-social azm-btn azm-border-bottom azm-google"><i class="fa fa-google"></i> Log in with Google</a>-->
 
-      <a id="google" class="btn btn-block btn-social btn-google">
+      <a id="ban" class="btn btn-block btn-social btn-google">
         <i class="fa fa-google"></i>
         Sign in with Google
+      </a>
+
+      <a id="ban" class="btn btn-block btn-social btn-facebook">
+        <i class="fa fa-facebook"></i>
+        Sign in with Facebook
+      </a>
+
+      <a id="ban" class="btn btn-block btn-social btn-twitter">
+        <i class="fa fa-twitter"></i>
+        Sign in with Twitter
       </a>
 
     <div id="or">
@@ -18,32 +28,62 @@
     </div>
 
     <!--<a href="#" class="btn azm-social azm-btn azm-border-bottom azm-google"><i class="fa fa-google"></i> Log in with Google</a>-->
-
-
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <div class="panel-body">
+        <%= form_for(:session, url: login_path, :html => {:class => 'panel-body'}) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %>
+    			<%= f.email_field :email, class: 'form-control', placeholder: "Email" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirm password" %>
+          <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :birthdate, "Birthdate" %>
+        </br>
+          <%= f.date_field :birthdate, class: 'from-controm', placeholder: "Birthdate" %>
+        </div>
+        <div class="checkbox">
+          <%= f.label :remember_me do %>
+            <%= f.check_box :remember_me %>
+            <span>Remember me</span>
+          <% end %>
+        </div>
+          <%= f.submit 'Log in', class: 'btn btn-default' %>
+        <% end %>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Confirm password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-
-    <div>
-      <label>Birthdate</label>
-      <input type="date" class="form-control" id="exampleInputBirthdate" placeholder="birthdate">
-    </div>
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Remember me
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
 </div>
-</div>
+
+<!--
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Confirm password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <div>
+          <label>Birthdate</label>
+          <input type="date" class="form-control" id="exampleInputBirthdate" placeholder="birthdate">
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>-->
