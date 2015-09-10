@@ -3,9 +3,19 @@ class ContentsController < ApplicationController
   end
 
   def create
+    @content = Content.new(content_params)
+    @content.member = current_member
+    @content.accepted = false
+    if @content.save
+      flash[:success] = 'Successfully uploaded.'
+    else
+      flash[:danger] = 'An error occured.'
+    end
+    redirect_to upload_path
   end
 
   def new
+    @content = Content.new
   end
 
   def edit
@@ -21,6 +31,7 @@ class ContentsController < ApplicationController
   end
 
   def moderate
+    @contents = Content.where(:accepted => false)
   end
 
   def accept
@@ -30,5 +41,10 @@ class ContentsController < ApplicationController
   end
 
   def vote
+  end
+
+  private
+  def content_params
+    params.require(:content).permit(:url, :media_type)
   end
 end
