@@ -1,3 +1,4 @@
+<div class="container">
 <div class="panel panel-primary">
   <div id="sign" class="panel-heading">LOG IN</div>
 
@@ -35,11 +36,12 @@
 		</div>
 		<div class="checkbox">
 			<%= f.label :remember_me do %>
-				<%= f.check_box :remember_me %>
-				<span>Remember me</span>
+			<%= f.check_box :remember_me %>
+		<span>Remember me</span>
 			<% end %>
 		</div>
 			<%= f.submit 'Log in', class: 'btn btn-default' %>
 		<% end %>
 	</div>
+</div>
 </div>

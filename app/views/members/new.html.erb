@@ -1,3 +1,4 @@
+<div class="container">
 <div class="panel panel-primary">
   <div id="log" class="panel-heading">REGISTER</div>
 <div class="panel-body">
@@ -45,10 +46,10 @@
         <div class="form-group">
           <%= f.label :birthdate, "Birthdate" %>
         </br>
-          <%= f.date_field :birthdate, class: 'from-controm', placeholder: "Birthdate" %>
+          <%= f.date_field :birthdate, class: 'from-controm text-center', placeholder: "Birthdate" %>
         </div>
         <div class="checkbox">
-          <%= f.label :remember_me do %>
+            <%= f.label :remember_me do %>
             <%= f.check_box :remember_me %>
             <span>Remember me</span>
           <% end %>
@@ -58,7 +59,7 @@
       </div>
     </div>
 </div>
-
+</div>
 <!--
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
