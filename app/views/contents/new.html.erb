@@ -14,35 +14,37 @@
             </label>
         </div>
     </div>
-    
+
     <div class="tab-content">
         <div id="video_upload" class="tab-pane active row">
             <h4>Submission form<small> - Movie</small></h4>
-            <form>
+            <%= form_for @content do |f| %>
                 <div class="form-group">
-                    <label for="inputvideolabel">URL</label>
-                    <input type="url" class="form-control" id="inputvideo" placeholder="ex: https://www.youtube.com/watch?v=QxEcDSYjgF8" required>
+                    <%= f.hidden_field :media_type, :value => 1 %>
+                    <%= f.label :inputvideolabel, 'URL' %>
+                    <%= f.url_field :url, class: 'form-control', id: 'inputvideo', placeholder: 'ex: https://www.youtube.com/watch?v=QxEcDSYjgF8' %>
                 </div>
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" required> I agree with <span class="text-info">Moonjoke</span>'s terms and conditions
                     </label>
                 </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+                <%= f.submit 'Submit', class: "btn btn-default" %>
+            <% end %>
             <div id="video_preview" style="display: none;">
                 <h4 class="text-center center-block">Preview</h4>
                 <iframe id="ytdplr" class="center-block" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
-        
-        
+
+
         <div id="picture_upload" class="tab-pane row">
             <h4>Submission form<small> - Picture</small></h4>
-            <form>
+            <%= form_for @content do |f| %>
                 <div class="form-group">
-                    <label for="inputpicturelabel">URL</label>
-                    <input type="url" class="form-control" id="inputpicture" placeholder="ex: http://img-9gag-fun.9cache.com/photo/aMQmyZ1_700b.jpg" required>
+                    <%= f.hidden_field :media_type, :value => 2 %>
+                    <%= f.label :inputpicturelabel, 'URL' %>
+                    <%= f.url_field :url, class: 'form-control', id: 'inputpicture', placeholder: 'ex: http://img-9gag-fun.9cache.com/photo/aMQmyZ1_700b.jpg' %>
                 </div>
                 <div class="checkbox">
                     <label>
@@ -50,14 +52,14 @@
                     </label>
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+            <% end %>
             <div id="picture_preview" style="display: none;">
                 <h4 class="text-center center-block">Preview</h4>
                 <img id="picplr" class="center-block" width="560" height="315" src=""></img>
             </div>
         </div>
-        
-        
+
+
         <div id="text_upload" class="tab-pane row">
             Text
         </div>
@@ -76,7 +78,7 @@
                 $("#video_preview").slideUp();
             }
         });
-        
+
         $("#inputpicture").focusout(function() {
             if ($(this).val()) {
                 $("#picplr").attr("src", $(this).val());
