@@ -1,31 +1,35 @@
 <div class="panel panel-primary">
   <div id="sign" class="panel-heading">LOG IN</div>
 
-  <a class="pull-center" id="google"> <%= image_tag('google.png', :class => "img-responsive center-block", :style => "max-width:250px") %> </a>
+<!--  <a class="pull-center" id="google"> <%= image_tag('google.png', :class => "img-responsive center-block", :style => "max-width:250px") %> </a>
+-->
+
+  <a id="google" class="btn btn-block btn-social btn-google">
+    <i class="fa fa-google"></i>
+    Sign in with Google
+  </a>
 
   <div id="or">
     or
   </div>
 
-<div class="panel-body">
-  <form class="panel-body">
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <a>
-      forgotten password?
-    </a>
-    <div class="checkbox">
-      <label>
-        <input type="checkbox"> Remember me
-      </label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-</div>
+	<div class="panel-body">
+		<%= form_for(:session, url: login_path, :html => {:class => 'panel-body'}) do |f| %>
+		<div class="form-group">
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+		</div>
+		<div class="form-group">
+			<%= f.label :password %>
+			<%= f.password_field :password, class: 'form-control' %>
+		</div>
+		<div class="checkbox">
+			<%= f.label :remember_me do %>
+				<%= f.check_box :remember_me %>
+				<span>Remember me</span>
+			<% end %>
+		</div>
+			<%= f.submit 'Log in', class: 'btn btn-default' %>
+		<% end %>
+	</div>
 </div>
