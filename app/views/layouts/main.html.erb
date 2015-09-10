@@ -78,6 +78,7 @@
               <i class="fa fa-cog fa-lg"></i>
               <%end%>
             </li>
+            <% unless is_logged? %>
             <li id="signup">
               <%= link_to register_path do %>
               <span class="btn navbar-btn btn-success">
@@ -92,6 +93,16 @@
               </span>
               <%end%>
             </li>
+<!--            <li id="profile">
+              <%= link_to members_path do %>
+              <span class="btn navbar-btn btn-info" >
+                <i class="fa fa-info"></i> Profile
+              </span>
+              <%end%>
+            </li>-->
+            <% end %>
+
+            <% if is_logged? %>
             <li id="profile">
               <%= link_to members_path do %>
               <span class="btn navbar-btn btn-info" >
@@ -99,13 +110,15 @@
               </span>
               <%end%>
             </li>
+
             <li id="signout">
-              <%= link_to login_path do %>
+              <%= link_to logout_path, method: 'delete' do %>
               <span class="btn navbar-btn btn-danger" >
                 <i class="fa fa-sign-out"></i> Sign out
               </span>
               <%end%>
             </li>
+            <% end %>
 
           </ul>
         </div>
@@ -124,14 +137,19 @@
                   <div class="modal-body" style="text-align: center;">
                       <div class="row">
                           <h2>Filter</h2>
-                          <button class="btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
                       </div>
                       <div class="row">
                           <h2>Display</h2>
-                          <button class="btn btn-default active"><%= image_tag("display_grid.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-default"><%= image_tag("display_line.png", :class => "img-responsive center-block img-rounded") %></button>
+
+
+                          <div class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-default"><input type="radio" name="options" id="option1"><%= image_tag("display_grid.png", :class => "img-responsive center-block img-rounded") %></label>
+                              <label class="btn btn-default active"><input type="radio" name="options" id="option1"><%= image_tag("display_line.png", :class => "img-responsive center-block img-rounded") %></label>
+                          </div>
+
                       </div>
                   </div>
                   <div class="modal-footer">
@@ -168,6 +186,15 @@
       </footer>
 
     </div> <!-- /container -->
+
+      <script>
+        $(document).load(new function() {
+            $(".btn-settings").click(function() {
+                $(this).toggleClass("btn-danger");
+                $(this).toggleClass("btn-success");
+            });
+        });
+      </script>
 
   </body>
 </html>
