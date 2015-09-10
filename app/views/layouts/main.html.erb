@@ -92,6 +92,15 @@
               </span>
               <%end%>
             </li>
+
+            <li id="signout">
+              <%= link_to login_path do %>
+              <span class="btn navbar-btn btn-danger" >
+                <i class="fa fa-sign-out"></i> Sign out
+              </span>
+              <%end%>
+            </li>
+
           </ul>
         </div>
       </div>
@@ -109,14 +118,19 @@
                   <div class="modal-body" style="text-align: center;">
                       <div class="row">
                           <h2>Filter</h2>
-                          <button class="btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-danger"><%= image_tag("video.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("image.png", :class => "img-responsive center-block img-rounded") %></button>
+                          <button class="btn-settings btn btn-success"><%= image_tag("joke.png", :class => "img-responsive center-block img-rounded") %></button>
                       </div>
                       <div class="row">
                           <h2>Display</h2>
-                          <button class="btn btn-default active"><%= image_tag("display_grid.png", :class => "img-responsive center-block img-rounded") %></button>
-                          <button class="btn btn-default"><%= image_tag("display_line.png", :class => "img-responsive center-block img-rounded") %></button>
+                          
+                          
+                          <div class="btn-group" data-toggle="buttons">
+                              <label class="btn btn-default"><input type="radio" name="options" id="option1"><%= image_tag("display_grid.png", :class => "img-responsive center-block img-rounded") %></label>
+                              <label class="btn btn-default active"><input type="radio" name="options" id="option1"><%= image_tag("display_line.png", :class => "img-responsive center-block img-rounded") %></label>
+                          </div>
+                          
                       </div>
                   </div>
                   <div class="modal-footer">
@@ -149,10 +163,19 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Moonjoke 2015</p>
       </footer>
 
     </div> <!-- /container -->
 
+      <script>
+        $(document).load(new function() {
+            $(".btn-settings").click(function() {
+                $(this).toggleClass("btn-danger");
+                $(this).toggleClass("btn-success");
+            });
+        });
+      </script>
+      
   </body>
 </html>
