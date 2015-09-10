@@ -70,7 +70,9 @@
           <ul id="nav" class="nav navbar-nav navbar-right">
             <li>
               <%= link_to upload_path do %>
-              <i class="fa fa-upload fa-lg"></i>
+                <% if is_logged? %>
+                <i class="fa fa-upload fa-lg"></i>
+                <%end%>
               <%end%>
             </li>
             <li type="button" data-toggle="modal" data-target="#myModal">
