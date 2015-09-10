@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'contents#index'
 
   resources :members, except: :create
+  resources :contents, only: :create
 
   get     'register'                => 'members#new'
   get     'login'                   => 'sessions#new'
