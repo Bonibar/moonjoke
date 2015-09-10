@@ -6,7 +6,7 @@
 
 <div class="vote text-center">
 	<button type="button" class="btn-vote btn btn-success btn-success-moderate">Ok</button>
-	<button type="button" class="btn btn-danger btn-failed-moderate" data-toggle="modal" data-target="#why">Not Ok</button>
+	<button onclick="$dialog=true;" type="button" class="btn-vote btn btn-danger btn-failed-moderate" data-toggle="modal" data-target="#why">Not Ok</button>
 </div>
 </div>
 <div class="modal fade" id="why">
@@ -21,16 +21,24 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Send the reason</button>
+        <button onclick="disapear();" type="button" class="btn btn-primary" data-dismiss="modal">Send the reason</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <script>
+    $dialog=false;
+    $object=null;
+    function disapear() {
+        if ($object) {
+            $object.parent().parent().parent().slideUp();
+        }
+    }
     $(document).load(new function() {
         $(".btn-vote").click(function() {
-            $(this).parent().parent().parent().slideUp();
+            $object = $(this);
+            if (!$dialog) { disapear($(this)); }
         });
     });
 </script>
