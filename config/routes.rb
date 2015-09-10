@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'contents#index'
 
+  resources :members, except: :create
+
   get     'register'                => 'members#new'
   get     'login'                   => 'sessions#new'
   post    'login'                   => 'sessions#create'
@@ -13,8 +15,6 @@ Rails.application.routes.draw do
   get     ':category/:subcategory'  => 'contents#index'    # Add constraints in the future (/15-20/recent)
   put     'contents/:id/accept'     => 'contents#accept', as: :deny_content
   put     'contents/:id/deny'       => 'contents#deny',   as: :accept_content
-
-  resources :members, except: :create
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
