@@ -18,11 +18,13 @@
       	<input type="radio" name="options" id="option5"> +40
   	 </label>
     </div>
-    <%= link_to vote_path do %>
-    <label id="path_to_vote" class="btn btn-info">
-      <i class="fa fa-thumbs-o-up"></i>
-      Vote
-    </label>
+    <% if is_logged? %>
+      <%= link_to vote_path do %>
+      <label id="path_to_vote" class="btn btn-info">
+        <i class="fa fa-thumbs-o-up"></i>
+        Vote
+      </label>
+      <%end%>
     <%end%>
 
    	<div class="btn-group pull-right" data-toggle="buttons">
