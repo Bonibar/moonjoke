@@ -5,8 +5,8 @@
 </div>
 
 <div class="vote text-center">
-	<button type="button" class="btn btn-success btn-success-moderate"><i class="fa fa-thumbs-up"></i>  Ok</button>
-	<button type="button" class="btn btn-danger btn-failed-moderate" data-toggle="modal" data-target="#why"><i class="fa fa-thumbs-down"></i>  Not Ok</button>
+	<button type="button" class="btn-vote btn btn-success btn-success-moderate">Ok</button>
+	<button type="button" class="btn btn-danger btn-failed-moderate" data-toggle="modal" data-target="#why">Not Ok</button>
 </div>
 </div>
 <div class="modal fade" id="why">
@@ -26,3 +26,11 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<script>
+    $(document).load(new function() {
+        $(".btn-vote").click(function() {
+            $(this).parent().parent().parent().slideUp();
+        });
+    });
+</script>
