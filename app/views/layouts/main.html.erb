@@ -69,6 +69,13 @@
           </span>
           <ul id="nav" class="nav navbar-nav navbar-right">
             <li>
+              <%= link_to moderate_path do %>
+                <% if is_logged? %>
+                <i class="fa fa-gavel fa-lg"></i>
+                <%end%>
+              <%end%>
+            </li>
+            <li>
               <%= link_to upload_path do %>
                 <% if is_logged? %>
                 <i class="fa fa-upload fa-lg"></i>
