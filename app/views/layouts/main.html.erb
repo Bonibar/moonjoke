@@ -78,6 +78,7 @@
               <i class="fa fa-cog fa-lg"></i>
               <%end%>
             </li>
+            <% unless is_logged? %>
             <li id="signup">
               <%= link_to register_path do %>
               <span class="btn navbar-btn btn-success">
@@ -92,14 +93,17 @@
               </span>
               <%end%>
             </li>
+            <% end %>
 
+            <% if is_logged? %>
             <li id="signout">
-              <%= link_to login_path do %>
+              <%= link_to logout_path, method: 'delete' do %>
               <span class="btn navbar-btn btn-danger" >
                 <i class="fa fa-sign-out"></i> Sign out
               </span>
               <%end%>
             </li>
+            <% end %>
 
           </ul>
         </div>
@@ -124,13 +128,13 @@
                       </div>
                       <div class="row">
                           <h2>Display</h2>
-                          
-                          
+
+
                           <div class="btn-group" data-toggle="buttons">
                               <label class="btn btn-default"><input type="radio" name="options" id="option1"><%= image_tag("display_grid.png", :class => "img-responsive center-block img-rounded") %></label>
                               <label class="btn btn-default active"><input type="radio" name="options" id="option1"><%= image_tag("display_line.png", :class => "img-responsive center-block img-rounded") %></label>
                           </div>
-                          
+
                       </div>
                   </div>
                   <div class="modal-footer">
@@ -176,6 +180,6 @@
             });
         });
       </script>
-      
+
   </body>
 </html>
