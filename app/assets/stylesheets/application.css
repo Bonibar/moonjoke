@@ -70,6 +70,11 @@
 	text-decoration: none;
 }
 
+#signout a
+{
+  color: #FF0000;
+}
+
 .list_contents
 {
 	margin-top: 20px;
