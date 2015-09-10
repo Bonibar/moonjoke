@@ -76,18 +76,12 @@
 
 }
 
-.btn-success-moderate
-{
-	margin-top: 15px
-}
-
-.btn-failed-moderate
-{
-	margin-top: 15px;
-	margin-left:100px;
-}
-
 .title
 {
 	margin-bottom:15px;
+}
+
+.container
+{
+	padding-top: 20px;
 }
