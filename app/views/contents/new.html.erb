@@ -16,13 +16,72 @@
     
     <div class="tab-content">
         <div id="video_upload" class="tab-pane active row">
-            Movie
+            <h4>Submission form<small> - movie</small></h4>
+            <form>
+                <div class="form-group">
+                    <label for="inputvideolabel">URL</label>
+                    <input type="url" class="form-control" id="inputvideo" placeholder="ex: https://www.youtube.com/watch?v=QxEcDSYjgF8" required>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" required> I agree with <span class="text-info">Moonjoke</span>'s terms and conditions
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <div id="video_preview" style="display: none;">
+                <h4 class="text-center center-block">Preview</h4>
+                <iframe id="ytdplr" class="center-block" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
+        
+        
         <div id="picture_upload" class="tab-pane row">
-            Picture
+            <h4>Submission form<small> - picture</small></h4>
+            <form>
+                <div class="form-group">
+                    <label for="inputpicturelabel">URL</label>
+                    <input type="url" class="form-control" id="inputpicture" placeholder="ex: http://img-9gag-fun.9cache.com/photo/aMQmyZ1_700b.jpg" required>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" required> I agree with <span class="text-info">Moonjoke</span>'s terms and conditions
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <div id="picture_preview" style="display: none;">
+                <h4 class="text-center center-block">Preview</h4>
+                <img id="picplr" class="center-block" width="560" height="315" src=""></img>
+            </div>
         </div>
+        
+        
         <div id="text_upload" class="tab-pane row">
             Text
         </div>
     </div>
 </div>
+
+<script>
+    $(document).load(new function() {
+        $("#inputvideo").focusout(function() {
+            if ($(this).val()) {
+                $uri_code = $(this).val().split("v=");
+                $("#ytdplr").attr("src", "https://www.youtube.com/embed/" + $uri_code[$uri_code.length - 1]);
+                $("#video_preview").slideDown();
+            } else {
+                $("#video_preview").slideUp();
+            }
+        });
+        
+        $("#inputpicture").focusout(function() {
+            if ($(this).val()) {
+                $("#picplr").attr("src", $(this).val());
+                $("#picture_preview").slideDown();
+            } else {
+                $("#picture_preview").slideUp();
+            }
+        });
+    });
+</script>
