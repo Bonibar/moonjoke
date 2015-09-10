@@ -69,11 +69,22 @@
 		</span>
 	</div>
 </div>
+<div id="no-more-vote" class="container jumbotron" style="display: none; padding-top: 20px">
+	<div class="contentvideo text-center">
+		<div class="title" style="margin:0;">
+			Plus aucun vote..
+		</div>
+        <%= image_tag("waiting.png", :class => "img-responsive center-block img-rounded") %>
+   	</div>
+</div>
 
 <script>
     $(document).load(new function() {
         $(".btn-vote").click(function() {
             $(this).parent().parent().parent().slideUp();
+            if ($(".vote").filter(":visible").length == 1) {
+                $("#no-more-vote").slideDown();
+            }
         });
     });
 </script>
