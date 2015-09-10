@@ -92,7 +92,13 @@
               </span>
               <%end%>
             </li>
-
+            <li id="profile">
+              <%= link_to members_path do %>
+              <span class="btn navbar-btn btn-info" >
+                <i class="fa fa-info"></i> Profile
+              </span>
+              <%end%>
+            </li>
             <li id="signout">
               <%= link_to login_path do %>
               <span class="btn navbar-btn btn-danger" >
