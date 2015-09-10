@@ -1,3 +1,23 @@
+<% @contents.each do |c| %>
+<div class="container jumbotron">
+  <div class="contentvideo text-center">
+  <h3>TITLE <small>by <%= c.member.pseudo %></small><h3>
+    <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px">
+        <iframe class="embed-responsive-item" src=<%= c.url %> frameborder="0" allowfullscreen>
+        </iframe>
+      </div>
+</div>
+<div class="vote">
+      <span class="col-sm-6 col-md-6 col-lg-6">
+      <button type="button" class="btn-vote btn btn-success btn-lg col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">OK</button>
+    </span>
+    <span class="col-sm-6 col-md-6 col-lg-6">
+      <button onclick="$dialog=true;" type="button" class="btn-vote btn btn-danger btn-lg col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3 col-xs-6 col-sm-6 col-md-6 col-lg-6" data-toggle="modal" data-target="#why">Not Ok</button>
+    </span>
+  </div>
+</div>
+<% end %>
+
 <div class="container jumbotron">
   <div class="contentvideo text-center">
   <h3>TITLE <small>by Toto</small><h3>
@@ -97,5 +117,3 @@
         });
     });
 </script>
-
-
