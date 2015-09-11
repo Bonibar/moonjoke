@@ -35,12 +35,17 @@ class ContentsController < ApplicationController
   end
 
   def accept
+    @content = Content.find(params[:id])
+    @content.update(accepted: true)
+    flash[:success] = 'Content accepted.'
+    redirect_to moderate_path
   end
 
   def deny
   end
 
   def vote
+    @contents = Content.where(:accepted => true)
   end
 
   private

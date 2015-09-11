@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   get     'moderate'                => 'contents#moderate' # Not index because restricted to moderators
   get     'vote'                    => 'contents#vote'     # Not index because restricted to members
   get     ':category/:subcategory'  => 'contents#index'    # Add constraints in the future (/15-20/recent)
-  put     'contents/:id/accept'     => 'contents#accept', as: :deny_content
-  put     'contents/:id/deny'       => 'contents#deny',   as: :accept_content
+  put     'contents/:id/accept'     => 'contents#accept', as: :accept_content
+  put     'contents/:id/deny'       => 'contents#deny',   as: :deny_content
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
