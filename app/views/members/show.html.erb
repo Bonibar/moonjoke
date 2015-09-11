@@ -2,8 +2,8 @@
 <div class="row jumbotron">
     <div class="col-sm-3"><%= image_tag("profile.png", :class => "img-responsive center-block") %></div>
     <div class="col-sm-9" style="text-align: center;">
-        <h2>NICKNAME</h2>
-        <div class="row"><span>Age: 18 years<span></div>
+        <h2><%= @member.pseudo.capitalize %></h2>
+        <div class="row"><span><%= @member.age %> years old<span></div>
         <div class="row"><span style="color: #0663d0;">Facebook:</span><span style="color: #239530;"> linked</span></div>
         <div class="row"><span>Humoristic age: 20-25 years</span></div>
     </div>
